@@ -1,0 +1,8 @@
+nltk
+fastapi 
+uvicorn
+streamlit
+requests
+pydantic
+loguru
+pytest
