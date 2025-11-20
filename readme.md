@@ -38,6 +38,12 @@ Si ce n'est pas le cas, l'application devrait tout de même être accessible dep
 pytest
 ```
 
+### Construire l'image Docker
+
+```bash
+docker build -t analyse-sentiments .
+```
+
 ## Endpoints
 
 ### Analyser un texte
