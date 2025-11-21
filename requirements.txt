@@ -1,3 +1,4 @@
+asyncio
 nltk
 fastapi 
 uvicorn
@@ -6,3 +7,4 @@ requests
 pydantic
 loguru
 pytest
+pytest_asyncio

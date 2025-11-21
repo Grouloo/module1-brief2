@@ -4,7 +4,12 @@ WORKDIR /app
 
 COPY . .
 
+# Installation des dépendences
 RUN pip install -r requirements.txt
+RUN python -c "import nltk; nltk.download('vader_lexicon')"
+
+# Tests
+RUN pytest
 
 RUN chmod +x start.sh
 
