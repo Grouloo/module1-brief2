@@ -4,6 +4,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 from loguru import logger
 from sys import stderr
 from interpret_sentiment import interpret_sentiment
+import requests
 
 sia = SentimentIntensityAnalyzer()
 app = FastAPI()
@@ -45,3 +46,22 @@ async def analyse_sentiment(input: AnalyseSentimentInput):
     except Exception as e:        
         logger.error(f"Erreur lors de l'analyse: {e}")        
         return {"error": str(e)}
+
+@app.get("/health")
+async def check_health():
+    logger.info("Vérification de la santé de l'application.")
+    try:
+        response = requests.get("http://127.0.0.1:8080/analyse_sentiment/")
+        response.raise_for_status() 
+        
+        return {
+            "api": "online",
+            "frontend": "online"
+        }
+    except Exception as e:        
+        logger.error("Frontend indisponible.")  
+        logger.error(e)      
+        return {
+            "api": "online",
+            "frontend": "offline"
+        }

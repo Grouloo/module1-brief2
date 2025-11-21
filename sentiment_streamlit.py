@@ -16,7 +16,7 @@ with st.form("my_form"):
     if submitted:
         logger.info(f"Texte à analyser: {text}")
         try:
-            response = requests.post("http://127.0.0.1:80/analyse_sentiment/", json={"text": text})
+            response = requests.post("http://127.0.0.1:8000/analyse_sentiment/", json={"text": text})
             response.raise_for_status() 
             sentiment = response.json()
 
