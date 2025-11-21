@@ -91,3 +91,18 @@ POST /analyse_sentiment
   }
 }
 ```
+
+### État de l'application
+
+```
+GET /health
+```
+
+#### Réponse
+
+```json
+{
+  "api": "online" | "offline",
+  "frontend": "online" | "offline"
+}
+```
