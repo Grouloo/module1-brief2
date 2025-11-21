@@ -1,4 +1,4 @@
-# Interface d'analyse de sentiments
+# Interface d'analyse de sentiments containerisée
 
 Ce dépôt contient une API HTTP et son interface homme-machine permettant d'analyser le sentiment dominant d'un texte (positif, négatif ou neutre). Il est également muni de fichiers de logs et d'une suite de tests sommaire.
 
@@ -13,6 +13,12 @@ python -c "import nltk; nltk.download('vader_lexicon')"
 ```
 
 ## Démarrer
+
+### Lancer l'API et le frontend
+
+```bash
+sh start.sh
+```
 
 ### Lancer le serveur HTTP
 
@@ -58,6 +64,12 @@ La procédure de création de l'image peut être consultée et modifiée dans le
 ```bash
 docker run --rm=true analyse-sentiments -p 8000:8000 8000:8080
 ```
+
+## Logs
+
+L'API et le frontend sont monitorés par Loguru.
+
+Les fichiers de logs sont disponibles dans le dossier `/logs` après le lancement de l'application.
 
 ## Endpoints
 
