@@ -62,7 +62,7 @@ La procédure de création de l'image peut être consultée et modifiée dans le
 ### Lancer le container
 
 ```bash
-docker run --rm=true analyse-sentiments -p 8000:8000 8080:8080
+docker run --rm=true  -p 8000:8000 -p 8080:8080 analyse-sentiments
 ```
 
 ## Logs
